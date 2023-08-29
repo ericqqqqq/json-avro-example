@@ -28,11 +28,12 @@ This script will start a Kafka consumer that listens to the `user` topic and log
 
 The output looks like below:
 ```
-{"level":"INFO","timestamp":"2023-08-28T19:47:10.110Z","logger":"kafkajs","message":"[Consumer] Starting","groupId":"my-group"}
-{"level":"INFO","timestamp":"2023-08-28T19:47:13.163Z","logger":"kafkajs","message":"[ConsumerGroup] Consumer has joined the group","groupId":"my-group","memberId":"my-client-5e74cdd6-6cc1-41bf-a1d5-fdff32d12458","leaderId":"my-client-5e74cdd6-6cc1-41bf-a1d5-fdff32d12458","isLeader":true,"memberAssignment":{"users":[0]},"groupProtocol":"RoundRobinAssigner","duration":3038}
-{
-  value: "�=�\fڅ�\x0F&C�ݔ8CQ\x13��'\x0E�\x0FD$?����\x15%h\x1C��̴��T)=���\x10���U���f\x19 �*��c%"
-}
+{"level":"INFO","timestamp":"2023-08-29T18:58:49.845Z","logger":"kafkajs","message":"[ConsumerGroup] Consumer has joined the group","groupId":"my-group","memberId":"my-consumer-86c63d68-863a-403e-a6dc-75f85c7cd79d","leaderId":"my-consumer-86c63d68-863a-403e-a6dc-75f85c7cd79d","isLeader":true,"memberAssignment":{"users":[0]},"groupProtocol":"RoundRobinAssigner","duration":3048}
+encrypted data: tL72YqtpPAHb7Ccn5M2+/EVhVBs6fW4vgy/HwppsK0VLG3jh7gZCB6u27KDG9vaWHroDa1znk8HwRFo6TmpRYw==
+decryptedData: �Eric Quan*eric.quan@example.com
+decoded data: {"id":123,"name":"Eric Quan","email":"eric.quan@example.com","isActive":true}
+encrypted data: W3BPP3cy97rqiQ7xWjFn2LFc8pGl9NcAousSsjt0zDtTCwIF2z+WvT2O+Y1YpKWKKXISChDeOZ4yRPk1dai/bA==
+decryptedData: �Eric Quan*eric.quan@example.com
 ```
 
 ### 3. Produce Encrypted Avro Messages:
