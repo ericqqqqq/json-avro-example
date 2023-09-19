@@ -53,6 +53,16 @@ The output looks like the below:
 {"level":"WARN","timestamp":"2023-08-28T19:54:23.402Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
 ```
 
+### 4. Test Transaction Abortion:
+
+To test the transaction abortion, run:
+
+```bash
+node producerError.js
+```
+
+This script will attempt to send messages, but it will artificially fail after the 5th message. You will see that the transaction is aborted and none of the messages are sent.
+
 ## Wrapping up
 
 You've now set up a local Kafka cluster, consumed messages from a topic, and produced encrypted Avro messages to that topic. Ensure to shut down the Docker containers when you're done:

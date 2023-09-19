@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Vivek Gatty",
+    "email": "vivek.gatty@example.com",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Roberta Berry",
+    "email": "roberta.berry@example.com",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "name": "Adam Olsen",
+    "email": "adam.olsen@example.com",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "name": "Abel Aubert",
+    "email": "abel.aubert@example.com",
+    "isActive": true
+  },
+  {
+    "id": 5,
+    "name": "Rolando Báez",
+    "email": "rolando.baez@example.com",
+    "isActive": true
+  },
+  {
+    "id": 6,
+    "name": "Lea Patel",
+    "email": "lea.patel@example.com",
+    "isActive": true
+  },
+  {
+    "id": 7,
+    "name": "Jasna Šarović",
+    "email": "jasna.sarovic@example.com",
+    "isActive": true
+  },
+  {
+    "id": 8,
+    "name": "Ignacio Saldivar",
+    "email": "ignacio.saldivar@example.com",
+    "isActive": true
+  },
+  {
+    "id": 9,
+    "name": "Maeva Chu",
+    "email": "maeva.chu@example.com",
+    "isActive": true
+  },
+  {
+    "id": 10,
+    "name": "Arjun Mugeraya",
+    "email": "arjun.mugeraya@example.com",
+    "isActive": true
+  },
+  {
+    "id": 11,
+    "name": "Nora Ryan",
+    "email": "nora.ryan@example.com",
+    "isActive": true
+  }
+]

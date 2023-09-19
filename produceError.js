@@ -23,20 +23,22 @@ async function run() {
   });
   await producer.connect();
 
-  // Register your schema and get the id, this usually happens in another codebase
   const schema = fs.readFileSync("./schema.avsc", "utf-8");
   const { id } = await registry.register({ type: SchemaType.AVRO, schema });
 
   const transaction = await producer.transaction();
   try {
-    for (const userJson of userJsons) {
-      // Encode the JSON payload to Avro using the schema id
+    for (let i = 0; i < userJsons.length; i++) {
+      const userJson = userJsons[i];
+
+      if (i === 5) {
+        throw new Error(`Artificial failure for testing transaction abortion. id: ${i}`);
+      }
+
       const avroBuffer = await registry.encode(id, userJson);
-      // Encrypt the Avro data
       const sk = generateSecretKey();
       const encryptedData = encrypt(sk, avroBuffer);
 
-      // Send the encrypted data and the secret key to Kafka
       await transaction.send({
         topic: "users",
         messages: [
@@ -52,9 +54,9 @@ async function run() {
     await transaction.commit();
     console.log("message sent");
   } catch (error) {
+    console.error("Error occurred during transaction:", error.message);
     console.log(error);
     await transaction.abort();
-    throw error;
   } finally {
     await producer.disconnect();
   }
